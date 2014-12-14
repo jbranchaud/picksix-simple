@@ -22,27 +22,27 @@
         <ul>
           <li id="item-1" class="todo-item" data-item-id="0">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
           <li id="item-2" class="todo-item" data-item-id="1">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
           <li id="item-3" class="todo-item" data-item-id="2">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
           <li id="item-4" class="todo-item" data-item-id="3">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
           <li id="item-5" class="todo-item" data-item-id="4">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
           <li id="item-6" class="todo-item" data-item-id="5">
             <input type="checkbox" class="todo-item-checkbox">
-            <span class="todo-item-text" contentEditable="false"></span>
+            <span class="todo-item-text" contentEditable="true"></span>
           </li>
         </ul>
 
@@ -57,22 +57,6 @@
 
     <script type="text/javascript" src="js/app.js"></script>
     <!-- <script type="text/javascript" src="js/development.js"></script> -->
-    <script type="text/javascript">
-
-      var itemElements = document.querySelectorAll(".todo-item");
-      Array.prototype.forEach.call(itemElements, function(el,i) {
-        var itemText = el.querySelector('.todo-item-text');
-        el.addEventListener("click", function(event) {
-          itemText.setAttribute("contentEditable", true);
-          itemText.focus();
-        });
-        el.addEventListener("click", function(event) {
-          itemText.setAttribute("contentEditable", true);
-          itemText.focus();
-        });
-      });
-
-    </script>
 
   </body>
 
