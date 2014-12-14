@@ -21,7 +21,7 @@
 #main ul {
   width: 100%;
   list-style: none;
-  padding: 0px;
+  padding: 0px 5px;
 }
 #main ul li {
   width: 100%;
