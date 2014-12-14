@@ -12,16 +12,19 @@
   var itemCheckboxElements = document.querySelectorAll('#main .todo-item .todo-item-checkbox');
 
   var initializeItems = function() {
-    var items = [];
-    for(var i = 0; i < 6; i++) {
-      var item = {
-        title: '',
-        created_at: null,
-        updated_at: null,
-        complete: false,
-        completed_at: null
-      };
-      items.push(item);
+    var items = JSON.parse(localStorage.getItem('items'));
+    if( !items ) {
+      items = [];
+      for(var i = 0; i < 6; i++) {
+        var item = {
+          title: '',
+          created_at: null,
+          updated_at: null,
+          complete: false,
+          completed_at: null
+        };
+        items.push(item);
+      }
     }
     return items;
   };
@@ -80,6 +83,8 @@
             item.created_at = item.updated_at;
           }
         }
+        // update the localStorage
+        window.localStorage.setItem('items', JSON.stringify(items));
       });
     });
   };
@@ -90,6 +95,8 @@
         var itemId = getItemId(event.target.parentElement);
         var checked = event.target.checked;
         updateItemCompletion(itemId, checked);
+        // update the localStorage
+        window.localStorage.setItem('items', JSON.stringify(items));
       });
     });
   };
@@ -101,5 +108,8 @@
 
   window.app = window.app || {};
   window.app.items = items;
+  if( !localStorage.getItem('items') ) {
+    localStorage.setItem('items', JSON.stringify(items));
+  }
 
 })();
