@@ -34,7 +34,7 @@
       var itemTitle = el.querySelector('.todo-item-text');
       var itemCheckbox = el.querySelector('.todo-item-checkbox');
       itemTitle.innerHTML = items[i].title;
-      itemCheckbox.checked = items[i].completed;
+      itemCheckbox.checked = items[i].complete;
     });
   };
 
