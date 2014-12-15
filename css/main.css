@@ -18,29 +18,33 @@
 #header h1 {
   font-family: 'Courgette', cursive;
   text-align: center;
+  margin-bottom: 5px;
 }
 #header h2 {
   text-align: center;
+  margin-top: 5px;
+  font-size: 18px;
+  color: rgba(100,100,100,0.35);
 }
 #header h2::before {
   content: "";
   position: absolute;
-  border-color: black;
+  border-color: rgba(100,100,100,0.35);
   border-style: solid;
   border-width: 0 0 2px 0;
-  width: 180px;
-  margin-left: -185px;
-  margin-top: 10px;
+  width: 185px;
+  margin-left: -190px;
+  margin-top: 7px;
 }
 #header h2::after {
   content: "";
   position: absolute;
-  border-color: black;
+  border-color: rgba(100,100,100,0.35);
   border-style: solid;
   border-width: 0 0 2px 0;
-  width: 180px;
+  width: 185px;
   margin-left: 5px;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 /** list **/
