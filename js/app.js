@@ -66,6 +66,39 @@
     return parseInt(itemElement.attributes['data-item-id'].value);
   };
 
+  // clear all the items in the picksix
+  var clearItems = function() {
+    clearItemsData();
+    clearItemsUI();
+  };
+
+  // clear all the items UI for the picksix
+  //
+  // all the item titles should be set to "" and the checkboxes set to
+  // false.
+  var clearItemsUI = function() {
+    Array.prototype.forEach.call(itemTitleElements, function(el, i) {
+      el.innerHTML = '';
+    });
+    Array.prototype.forEach.call(itemCheckboxElements, function(el, i) {
+      el.checked = false;
+    });
+  };
+
+  // clear all the items data for the picksix
+  //
+  // all the item titles should be set to "", the completions set to false,
+  // and the timestamps reset to null.
+  var clearItemsData = function() {
+    Array.prototype.forEach.call(items, function(item, i) {
+      item.title = "";
+      item.complete = false;
+      item.created_at = null;
+      item.updated_at = null;
+      item.completed_at = null;
+    });
+  };
+
   //                          //
   // Add Event Handlers to UI //
   //                          //
@@ -101,10 +134,22 @@
     });
   };
 
+  // add a click handler to the clear button
+  var addClearButtonClickHandler = function() {
+    var clearButton = document.getElementById('clear_button');
+    clearButton.addEventListener('click', function(event) {
+      var shouldClear = confirm("Are you sure you want to clear your PickSix?");
+      if( shouldClear ) {
+        clearItems();
+      }
+    });
+  };
+
   items = initializeItems();
   initializeView(items);
   addItemTitleChangeEventHandlers();
   addItemCompleteChangeEventHandlers();
+  addClearButtonClickHandler();
 
   window.app = window.app || {};
   window.app.items = items;
