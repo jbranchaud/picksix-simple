@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+/** sections **/
 #picksix {
   max-width: 500px;
   margin: 0 auto;
+}
+#main {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /** header **/
@@ -21,7 +26,7 @@
 #main ul {
   width: 100%;
   list-style: none;
-  padding: 0px 5px;
+  padding: 0px;
 }
 #main ul li {
   width: 100%;
@@ -45,7 +50,7 @@
 
 /** clear button **/
 #clear_button {
-  float: right;
+  text-align: center;
 }
 
 /** buttons **/
