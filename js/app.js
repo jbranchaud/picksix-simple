@@ -97,6 +97,8 @@
       item.updated_at = null;
       item.completed_at = null;
     });
+    // update the localStorage
+    window.localStorage.setItem('items', JSON.stringify(items));
   };
 
   //                          //
