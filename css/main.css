@@ -8,10 +8,10 @@
 #picksix {
   max-width: 500px;
   margin: 0 auto;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 #main {
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 /** header **/
