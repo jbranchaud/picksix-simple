@@ -87,3 +87,17 @@
 .button:hover {
   color: rgba(100,100,100,0.75);
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+  #main ul li {
+    padding: 15px;
+  }
+  #main ul li .todo-item-text {
+    font-size: 14px;
+  }
+
+}
