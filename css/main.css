@@ -71,6 +71,7 @@
 }
 #main ul li .todo-item-checkbox {
   position: absolute;
+  transform: scale(1.5);
 }
 
 /** clear button **/
