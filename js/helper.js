@@ -19,8 +19,9 @@
   Array.prototype.removeItem = function(item) {
     var index = this.indexOf(item);
     if( index !== -1 ) {
-      this.splice(index, 1);
+      return this.splice(index, 1);
     }
+    return null;
   };
 
   /** end of Array Extensions **/
