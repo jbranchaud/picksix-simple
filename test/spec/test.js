@@ -29,6 +29,16 @@
         assert.equal(arr.removeItem(1), null, 'should return null');
       });
 
+      it('should only remove one item at a time when duplicates exist in an array', function() {
+        var arr = [1,2,3,2,4,2];
+        assert.equal(arr.length, 6);
+        arr.removeItem(2);
+        assert.equal(arr.length, 5);
+        arr.removeItem(2);
+        assert.equal(arr.length, 4);
+        assert.equal(arr.toString(), [1,3,4,2].toString());
+      });
+
     });
 
   });
