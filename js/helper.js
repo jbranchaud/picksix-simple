@@ -18,8 +18,8 @@
   // http://davidwalsh.name/remove-item-array-javascript
   Array.prototype.removeItem = function(item) {
     var index = this.indexOf(item);
-    if( index != -1 ) {
-      this.splice(index, -1);
+    if( index !== -1 ) {
+      this.splice(index, 1);
     }
   };
 
