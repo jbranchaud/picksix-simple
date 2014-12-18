@@ -47,6 +47,20 @@
   margin-top: 7px;
 }
 
+/** footer **/
+#footer p {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(100,100,100,0.7);
+}
+#footer p a {
+  color: rgba(100,100,100,0.7);
+  text-decoration: none;
+}
+#footer p a:hover {
+  color: rgba(100,100,100,1.0);
+}
+
 /** list **/
 #main ul {
   width: 100%;
