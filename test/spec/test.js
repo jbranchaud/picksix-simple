@@ -33,6 +33,16 @@
 
     });
 
+    describe('Array.prototype.remove', function() {
+
+      it('should be able to remove an item by index from an array', function() {
+        var arr = ['a','b','c'];
+        arr.remove(1);
+        assert.equal(arr.toString(), ['a','c'].toString());
+      });
+
+    });
+
   });
 
 })();
