@@ -59,6 +59,14 @@
         assert.equal(window.localStorage.getItem('pick'), 'six');
       });
 
+      it('should be able to store number values in localStorage', function() {
+        storage.set('one', 1);
+        storage.set('millions', 4583000);
+
+        assert.equal(window.localStorage.getItem('one'), 1);
+        assert.equal(window.localStorage.getItem('millions'), 4583000);
+      });
+
     });
 
   });
