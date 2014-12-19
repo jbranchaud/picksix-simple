@@ -45,4 +45,22 @@
 
   });
 
+  describe('storage.js', function() {
+
+    var storage = app.storage;
+
+    describe('storage.set', function() {
+
+      it('should be able to store string values in localStorage', function() {
+        storage.set('hello', 'world');
+        storage.set('pick', 'six');
+
+        assert.equal(window.localStorage.getItem('hello'), 'world');
+        assert.equal(window.localStorage.getItem('pick'), 'six');
+      });
+
+    });
+
+  });
+
 })();
