@@ -67,6 +67,14 @@
         assert.equal(window.localStorage.getItem('millions'), 4583000);
       });
 
+      it('should be able to store boolean values in localStorage', function() {
+        storage.set('truthy', true);
+        storage.set('falsy', false);
+
+        assert.equal(window.localStorage.getItem('truthy'), true);
+        assert.equal(window.localStorage.getItem('falsy'), false);
+      });
+
     });
 
   });
