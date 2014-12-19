@@ -75,6 +75,35 @@
         assert.equal(window.localStorage.getItem('falsy'), false);
       });
 
+      it('should be able to store JSON objects in localStorage', function() {
+        var simpleObject = {
+          hello: "world",
+          one: 1,
+          truthy: true
+        };
+        var complexObject = {
+          data: {
+            v1: 1,
+            v2: 2,
+            v3: 3
+          },
+          config1: 'always',
+          config2: true,
+          numbers: [1,2,3,4,5]
+        };
+
+        storage.set('object1', simpleObject);
+        storage.set('object2', complexObject);
+
+        var simpleObjectFromStorage = JSON.parse(window.localStorage.getItem('object1'));
+        assert.equal(simpleObjectFromStorage.hello, simpleObject.hello);
+        assert.equal(simpleObjectFromStorage.truthy, simpleObject.truthy);
+
+        var complexObjectFromStorage = JSON.parse(window.localStorage.getItem('object2'));
+        assert.equal(complexObjectFromStorage.data.v3, complexObject.data.v3);
+        assert.equal(complexObjectFromStorage.numbers[2], complexObject.numbers[2]);
+      });
+
     });
 
   });
