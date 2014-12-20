@@ -4,6 +4,8 @@
 
 (function() {
 
+  var storage = window.app.storage;
+
   var items = [];
 
   // grab the static UI elements to work with
@@ -12,7 +14,7 @@
   var itemCheckboxElements = document.querySelectorAll('#main .todo-item .todo-item-checkbox');
 
   var initializeItems = function() {
-    var items = JSON.parse(localStorage.getItem('items'));
+    var items = storage.get('items');
     if( !items ) {
       items = [];
       for(var i = 0; i < 6; i++) {
@@ -98,7 +100,7 @@
       item.completed_at = null;
     });
     // update the localStorage
-    window.localStorage.setItem('items', JSON.stringify(items));
+    storage.set('items', items);
   };
 
   //                          //
@@ -119,7 +121,7 @@
           }
         }
         // update the localStorage
-        window.localStorage.setItem('items', JSON.stringify(items));
+        storage.set('items', items);
       });
     });
   };
@@ -131,7 +133,7 @@
         var checked = event.target.checked;
         updateItemCompletion(itemId, checked);
         // update the localStorage
-        window.localStorage.setItem('items', JSON.stringify(items));
+        storage.set('items', items);
       });
     });
   };
@@ -155,8 +157,9 @@
 
   window.app = window.app || {};
   window.app.items = items;
-  if( !localStorage.getItem('items') ) {
-    localStorage.setItem('items', JSON.stringify(items));
+  // TODO: can this be moved up to the the initialize function?
+  if( !storage.get('items') ) {
+    storage.set('items', items);
   }
 
 })();
