@@ -3,7 +3,7 @@
 // the browser storage functionality for PickSix
 //
 // ## Dependencies:
-// 
+//
 // - js/helper.js
 
 (function() {
