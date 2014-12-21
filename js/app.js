@@ -1,6 +1,11 @@
 // app.js
 //
 // the main application file for PickSix
+//
+// ## Dependencies:
+//
+// - js/helper.js
+// - js/storage.js
 
 (function() {
 
