@@ -27,6 +27,7 @@
         };
         items.push(item);
       }
+      storage.set('items', items);
     }
     return items;
   };
@@ -157,9 +158,5 @@
 
   window.app = window.app || {};
   window.app.items = items;
-  // TODO: can this be moved up to the the initialize function?
-  if( !storage.get('items') ) {
-    storage.set('items', items);
-  }
 
 })();
