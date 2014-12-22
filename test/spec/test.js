@@ -132,6 +132,35 @@
         assert.equal(storage.get('no'), false);
       });
 
+      it('should be able to retrieve object literals from localStorage', function() {
+        var simpleObject = {
+          hello: "world",
+          one: 1,
+          truthy: true
+        };
+        var complexObject = {
+          data: {
+            v1: 1,
+            v2: 2,
+            v3: 3
+          },
+          config1: 'always',
+          config2: true,
+          numbers: [1,2,3,4,5]
+        };
+
+        window.localStorage.setItem('object1', JSON.stringify(simpleObject));
+        window.localStorage.setItem('object2', JSON.stringify(complexObject));
+
+        var simpleObjectFromStorage = storage.get('object1');
+        assert.equal(simpleObjectFromStorage.hello, simpleObject.hello);
+        assert.equal(simpleObjectFromStorage.truthy, simpleObject.truthy);
+
+        var complexObjectFromStorage = storage.get('object2');
+        assert.equal(complexObjectFromStorage.data.v3, complexObject.data.v3);
+        assert.equal(complexObjectFromStorage.numbers[2], complexObject.numbers[2]);
+      });
+
     });
 
   });
