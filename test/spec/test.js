@@ -106,6 +106,34 @@
 
     });
 
+    describe('storage.get', function() {
+
+      it('should be able to retrieve a number value from localStorage', function() {
+        window.localStorage.setItem('two', 2);
+        window.localStorage.setItem('fivefivefive', 555);
+
+        assert.equal(storage.get('two'), 2);
+        assert.equal(storage.get('fivefivefive'), 555);
+      });
+
+      it('should be able to retrieve a string value from localStorage', function() {
+        window.localStorage.setItem('computer', 'mac');
+        window.localStorage.setItem('phone', 'iphone');
+
+        assert.equal(storage.get('computer'), 'mac');
+        assert.equal(storage.get('phone'), 'iphone');
+      });
+
+      it('should be able to retrieve a boolean value from localStorage', function() {
+        window.localStorage.setItem('yes', true);
+        window.localStorage.setItem('no', false);
+
+        assert.equal(storage.get('yes'), true);
+        assert.equal(storage.get('no'), false);
+      });
+
+    });
+
   });
 
 })();
