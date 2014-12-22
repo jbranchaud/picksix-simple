@@ -42,7 +42,7 @@
 
     var value = window.localStorage.getItem(key);
     try {
-      // if parsing fales, just return the value as is
+      // if parsing fails, just return the value as is
       return JSON.parse(value);
     }
     catch(e) {
