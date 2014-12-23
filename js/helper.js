@@ -26,4 +26,32 @@
 
   /** end of Array Extensions **/
 
+
+  /** jQuery Substitutes **/
+
+  var $ = {};
+
+  $.addClass = function(element, className) {
+    if( element.classList ) {
+      element.classList.add(className);
+    }
+    else {
+      element.className += ' ' + className;
+    }
+  };
+
+  $.removeClass = function(element, className) {
+    if( element.classList ) {
+      element.classList.remove(className);
+    }
+    else {
+      el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+  }
+
+  /** end of jQuery Substitutes **/
+
+  window.app = window.app || {};
+  window.app.$ = $;
+
 })();
