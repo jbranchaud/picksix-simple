@@ -31,6 +31,8 @@
 
   var $ = {};
 
+  // Add the class name to the element
+  // http://youmightnotneedjquery.com/#add_class
   $.addClass = function(element, className) {
     if( element.classList ) {
       element.classList.add(className);
@@ -40,6 +42,8 @@
     }
   };
 
+  // Remove the class name from the element
+  // http://youmightnotneedjquery.com/#remove_class
   $.removeClass = function(element, className) {
     if( element.classList ) {
       element.classList.remove(className);
