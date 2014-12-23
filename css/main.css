@@ -22,7 +22,7 @@
 }
 #header h2 {
   text-align: center;
-  margin-top: 5px;
+  margin-top: -10px;
   font-size: 18px;
   color: rgba(100,100,100,0.35);
 }
