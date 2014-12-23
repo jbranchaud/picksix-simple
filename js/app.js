@@ -10,6 +10,7 @@
 (function() {
 
   var storage = window.app.storage;
+  var $ = window.app.$;
 
   var items = [];
 
@@ -43,6 +44,7 @@
       var itemCheckbox = el.querySelector('.todo-item-checkbox');
       itemTitle.innerHTML = items[i].title;
       itemCheckbox.checked = items[i].complete;
+      updateCheckedItem(itemTitle, items[i].complete);
     });
   };
 
@@ -109,6 +111,15 @@
     storage.set('items', items);
   };
 
+  var updateCheckedItem = function(itemTitle, checked) {
+    if( checked ) {
+      $.addClass(itemTitle, 'completed');
+    }
+    else {
+      $.removeClass(itemTitle, 'completed');
+    }
+  };
+
   //                          //
   // Add Event Handlers to UI //
   //                          //
@@ -136,8 +147,10 @@
     Array.prototype.forEach.call(itemCheckboxElements, function(el, i) {
       el.addEventListener('change', function(event) {
         var itemId = getItemId(event.target.parentElement);
+        var itemTitle = event.target.parentElement.querySelector('.todo-item-text');
         var checked = event.target.checked;
         updateItemCompletion(itemId, checked);
+        updateCheckedItem(itemTitle, checked);
         // update the localStorage
         storage.set('items', items);
       });

@@ -83,6 +83,9 @@
   font-size: 18px;
   line-height: 14px;
 }
+#main ul li .todo-item-text.completed {
+  text-decoration: line-through;
+}
 #main ul li .todo-item-checkbox {
   position: absolute;
   transform: scale(1.5);
