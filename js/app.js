@@ -89,6 +89,7 @@
   var clearItemsUI = function() {
     Array.prototype.forEach.call(itemTitleElements, function(el, i) {
       el.innerHTML = '';
+      $.removeClass(el, 'completed');
     });
     Array.prototype.forEach.call(itemCheckboxElements, function(el, i) {
       el.checked = false;
