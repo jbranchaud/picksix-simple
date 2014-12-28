@@ -4,6 +4,8 @@
 
 *A simple, client-side-only vanilla JS implementation of PickSix*
 
+See the [demo](http://jbranchaud.github.io/picksix-simple/).
+
 ## License
 
 &copy; 2014 Josh Branchaud
